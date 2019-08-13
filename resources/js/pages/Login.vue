@@ -1,3 +1,7 @@
 <template>
-    <h1>Log in</h1>
+    <div class="container--small">
+        <ul class="tab">
+            
+        </ul>
+    </div>
 </template>
