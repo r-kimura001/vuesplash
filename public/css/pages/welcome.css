@@ -1,0 +1,63 @@
+.appMenu{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.appMenu_item{
+    width: calc((100% - 30px) / 3);
+    background: #ddd;
+    border-radius: 6px;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.appMenu_item:hover{
+    opacity: 0.6;
+}
+
+/******** ボックスカラー ********/
+.appMenu_item:first-child{
+    background: #f66d9b;
+}
+.appMenu_item:nth-child(2){
+    background: #1d68a7;
+}
+.appMenu_item:nth-child(3){
+    background: #38c172;
+}
+.appMenu_item:nth-child(4){
+    background: #f6993f;
+}
+.appMenu_item:nth-child(5){
+    background: #9561e2;
+}
+.appMenu_item:nth-child(6){
+    background: #ffdf11;
+}
+
+/*****************************/
+
+
+.appMenu_item:not(:nth-of-type(3n+1)){
+    margin-left: 15px;
+}
+.appMenu_item:nth-of-type(n+4){
+    margin-top: 15px;
+}
+
+.appMenu_link{
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    padding-top: 56.75%;
+    position: relative;
+}
+.appMenu_linkText{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+}
