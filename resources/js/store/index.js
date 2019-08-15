@@ -7,10 +7,10 @@ import error from './error'
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
-    modules: {
-        auth,
-        error
-    }
-});
+  modules: {
+    auth,
+    error
+  }
+})
 
 export default store
