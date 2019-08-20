@@ -3777,8 +3777,7 @@ var render = function() {
           },
           expression: "showForm"
         }
-      }),
-      _vm._v(">\n")
+      })
     ],
     1
   )
@@ -3866,7 +3865,11 @@ var render = function() {
           _vm._v(" "),
           _c("input", {
             staticClass: "form__item",
-            attrs: { type: "file" },
+            attrs: {
+              type: "file",
+              name: "photo",
+              enctype: "multipart/form-data"
+            },
             on: { change: _vm.onFileChange }
           }),
           _vm._v(" "),
