@@ -6,50 +6,50 @@ use Illuminate\Database\Eloquent\Model;
 
 class Photo extends Model
 {
-     /** プライマリキーの型 */
-     protected $keyType = 'string';
+    /** プライマリキーの型 */
+    protected $keyType = 'string';
 
-     /** IDの桁数 */
-     const ID_LENGTH = 12;
+    /** IDの桁数 */
+    const ID_LENGTH = 12;
 
-     public function __construct(array $attributes = [])
-     {
-         parent::__construct($attributes);
+    public function __construct(array $attributes = [])
+    {
+        parent::__construct($attributes);
 
-         if (! array_get($this->attributes, 'id')) {
-             $this->setId();
-         }
-     }
+        if (!array_get($this->attributes, 'id')) {
+            $this->setId();
+        }
+    }
 
-     /**
-      * ランダムなID値をid属性に代入する
-      */
-     private function setId()
-     {
-         $this->attributes['id'] = $this->getRandomId();
-     }
+    /**
+     * ランダムなID値をid属性に代入する
+     */
+    private function setId()
+    {
+        $this->attributes['id'] = $this->getRandomId();
+    }
 
-     /**
-      * ランダムなID値を生成する
-      * @return string
-      */
-     private function getRandomId()
-     {
-         $characters = array_merge(
-             range(0, 9), range('a', 'z'),
-             range('A', 'Z'), ['-', '_']
-         );
+    /**
+     * ランダムなID値を生成する
+     * @return string
+     */
+    private function getRandomId()
+    {
+        $characters = array_merge(
+            range(0, 9), range('a', 'z'),
+            range('A', 'Z'), ['-', '_']
+        );
 
-         $length = count($characters);
+        $length = count($characters);
 
-         $id = "";
+        $id = "";
 
-         for ($i = 0; $i < self::ID_LENGTH; $i++) {
-             $id .= $characters[random_int(0, $length - 1)];
-         }
+        for ($i = 0; $i < self::ID_LENGTH; $i++) {
+            $id .= $characters[random_int(0, $length - 1)];
+        }
 
-         return $id;
-     }
+        return $id;
+    }
 
     /**
      * リレーションシップ - usersテーブル
@@ -77,9 +77,19 @@ class Photo extends Model
 
     /** JSONに含める属性 */
     protected $visible = [
-        'id', 'owner', 'url',
+        'id', 'owner', 'url', 'comments'
     ];
 
     protected $perPage = 15;
+
+    /**
+     * リレーションシップ - commentsテーブル
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function comments()
+    {
+        return $this->hasMany('App\Comment')->orderBy('id', 'desc');
+    }
+
 
 }
