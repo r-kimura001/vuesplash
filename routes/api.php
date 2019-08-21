@@ -24,14 +24,17 @@ Route::get('/user', function () {
     return Auth::user();
 })->name('user');
 
+
 // 写真投稿
 Route::post('/photos', 'PhotoController@create')->name('photo.create');
 
 // 写真一覧
 Route::get('/photos', 'PhotoController@index')->name('photo.index');
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
-//     return $request->user();
+//     return $request->user();npm install eslint babel-eslint --save-dev
 // });
 
 // 写真ダウンロード
 Route::get('/photos/{photo}/download', 'PhotoController@download');
+// 写真詳細
+Route::get('/photos/{id}', 'PhotoController@show')->name('photo.show');

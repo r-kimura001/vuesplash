@@ -7,6 +7,7 @@ use App\Photo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+
 //use Illuminate\Support\Facades\Storage;
 
 class PhotoController extends Controller
@@ -14,7 +15,7 @@ class PhotoController extends Controller
     public function __construct()
     {
         // 認証が必要
-        $this->middleware('auth')->except(['index', 'download']);
+        $this->middleware('auth')->except(['index', 'show']);
     }
 
     /**
@@ -54,7 +55,7 @@ class PhotoController extends Controller
     public function download(Photo $photo)
     {
         // 写真の存在チェック
-        if (! Storage::cloud()->exists($photo->filename)) {
+        if (!Storage::cloud()->exists($photo->filename)) {
             abort(404);
         }
 
@@ -65,6 +66,18 @@ class PhotoController extends Controller
 
         return response(Storage::cloud()->get($photo->filename), 200, $headers);
 
+    }
+
+    /**
+     * 写真詳細
+     * @param string $id
+     * @return Photo
+     */
+    public function show(string $id)
+    {
+        $photo = Photo::where('id', $id)->with(['owner'])->first();
+
+        return $photo ?? abort(404);
     }
 
 }
