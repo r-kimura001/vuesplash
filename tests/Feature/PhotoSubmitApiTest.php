@@ -4,18 +4,18 @@ namespace Tests\Feature;
 
 use App\Photo;
 use App\User;
-use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Storage;
+use Tests\TestCase;
 
 class PhotoSubmitApiTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function setUp(): void
+    public function setUp()
     {
         parent::setUp();
 
@@ -24,7 +24,6 @@ class PhotoSubmitApiTest extends TestCase
 
     /**
      * @test
-     * @group photo_submit
      */
     public function should_ファイルをアップロードできる()
     {
@@ -52,7 +51,6 @@ class PhotoSubmitApiTest extends TestCase
 
     /**
      * @test
-     * @group photo_submit
      */
     public function should_データベースエラーの場合はファイルを保存しない()
     {
@@ -75,7 +73,6 @@ class PhotoSubmitApiTest extends TestCase
 
     /**
      * @test
-     * @group photo_submit
      */
     public function should_ファイル保存エラーの場合はDBへの挿入はしない()
     {

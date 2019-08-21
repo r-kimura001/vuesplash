@@ -2,7 +2,6 @@
 
 namespace Tests\Feature;
 
-
 use App\User;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -14,7 +13,6 @@ class RegisterApiTest extends TestCase
 
     /**
      * @test
-     * @group authenticate
      */
     public function should_新しいユーザーを作成して返却する()
     {
@@ -22,7 +20,7 @@ class RegisterApiTest extends TestCase
             'name' => 'vuesplash user',
             'email' => 'dummy@email.com',
             'password' => 'test1234',
-            'password_confirmation' => 'test1234'
+            'password_confirmation' => 'test1234',
         ];
 
         $response = $this->json('POST', route('register'), $data);
@@ -31,9 +29,7 @@ class RegisterApiTest extends TestCase
         $this->assertEquals($data['name'], $user->name);
 
         $response
-            ->assertJson([
-                'name' => $user->name
-                ])
-            ->assertStatus(201);
+            ->assertStatus(201)
+            ->assertJson(['name' => $user->name]);
     }
 }

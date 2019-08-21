@@ -7,12 +7,11 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-
 class LoginApiTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function setUp(): void
+    public function setUp()
     {
         parent::setUp();
 
@@ -22,13 +21,12 @@ class LoginApiTest extends TestCase
 
     /**
      * @test
-     * @group authenticate
      */
     public function should_登録済みのユーザーを認証して返却する()
     {
         $response = $this->json('POST', route('login'), [
             'email' => $this->user->email,
-            'password' => 'password',
+            'password' => 'secret',
         ]);
 
         $response

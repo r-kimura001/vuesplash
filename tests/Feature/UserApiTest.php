@@ -11,7 +11,7 @@ class UserApiTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function setUp(): void
+    public function setUp()
     {
         parent::setUp();
 
@@ -21,9 +21,7 @@ class UserApiTest extends TestCase
 
     /**
      * @test
-     * @group user_info
      */
-
     public function should_ログイン中のユーザーを返却する()
     {
         $response = $this->actingAs($this->user)->json('GET', route('user'));
@@ -35,12 +33,9 @@ class UserApiTest extends TestCase
             ]);
     }
 
-
     /**
      * @test
-     * @group user_info
      */
-
     public function should_ログインされていない場合は空文字を返却する()
     {
         $response = $this->json('GET', route('user'));
@@ -48,8 +43,4 @@ class UserApiTest extends TestCase
         $response->assertStatus(200);
         $this->assertEquals("", $response->content());
     }
-
-
-
-
 }
