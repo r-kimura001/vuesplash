@@ -33,3 +33,5 @@ Route::get('/photos', 'PhotoController@index')->name('photo.index');
 //     return $request->user();
 // });
 
+// 写真ダウンロード
+Route::get('/photos/{photo}/download', 'PhotoController@download');
