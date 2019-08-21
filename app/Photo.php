@@ -80,4 +80,6 @@ class Photo extends Model
         'id', 'owner', 'url',
     ];
 
+    protected $perPage = 15;
+
 }
