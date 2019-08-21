@@ -21463,8 +21463,8 @@ var INTERNAL_SERVER_ERROR = 500;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/user1/code/myapp/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/user1/code/myapp/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/kimura/code/vuesplash/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/kimura/code/vuesplash/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
