@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5fcc14d592d8ac7cdbdba82fec77a337",
+    "content-hash": "96318a222d72198cba60d5cfecc348e3",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -805,6 +805,58 @@
             ],
             "description": "Highlight PHP code in terminal",
             "time": "2018-09-29T18:48:56+00:00"
+        },
+        {
+            "name": "laravel-ja/comja5",
+            "version": "1.0.18",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel-ja/comja5.git",
+                "reference": "419852aab174650c645af610464a3d5237dab188"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel-ja/comja5/zipball/419852aab174650c645af610464a3d5237dab188",
+                "reference": "419852aab174650c645af610464a3d5237dab188",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "mockery/mockery": "dev-master",
+                "phpunit/phpunit": "4.5.0"
+            },
+            "bin": [
+                "bin/comja5"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Comja\\": "Comja/"
+                },
+                "files": [
+                    "helper.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Hirohisa Kawase",
+                    "role": "developer",
+                    "email": "hiro.soft@gmail.com"
+                }
+            ],
+            "description": "Translate comments in laravel/laravel 5.* project to Japanese",
+            "keywords": [
+                "japanese",
+                "laravel",
+                "resource"
+            ],
+            "time": "2017-02-06T06:39:37+00:00"
         },
         {
             "name": "laravel/framework",
@@ -3484,8 +3536,8 @@
             "authors": [
                 {
                     "name": "Tijs Verkoyen",
-                    "email": "css_to_inline_styles@verkoyen.eu",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "css_to_inline_styles@verkoyen.eu"
                 }
             ],
             "description": "CssToInlineStyles is a class that enables you to convert HTML-pages/files into HTML-pages/files with inline styles. This is very useful when you're sending emails.",
@@ -3908,8 +3960,8 @@
             "authors": [
                 {
                     "name": "Hassan Khan",
-                    "homepage": "http://hassankhan.me/",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "homepage": "http://hassankhan.me/"
                 }
             ],
             "description": "Lightweight configuration file loader that supports PHP, INI, XML, JSON, and YAML files",
@@ -4142,18 +4194,18 @@
             "authors": [
                 {
                     "name": "Arne Blankerts",
-                    "email": "arne@blankerts.de",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "arne@blankerts.de"
                 },
                 {
                     "name": "Sebastian Heuer",
-                    "email": "sebastian@phpeople.de",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "sebastian@phpeople.de"
                 },
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "Component for reading phar.io manifest information from a PHP Archive (PHAR)",
@@ -4189,18 +4241,18 @@
             "authors": [
                 {
                     "name": "Arne Blankerts",
-                    "email": "arne@blankerts.de",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "arne@blankerts.de"
                 },
                 {
                     "name": "Sebastian Heuer",
-                    "email": "sebastian@phpeople.de",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "sebastian@phpeople.de"
                 },
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "Library for handling version information and constraints",
@@ -4471,8 +4523,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "lead"
+                    "role": "lead",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "Library that provides collection, processing, and rendering functionality for PHP code coverage information.",
@@ -4522,8 +4574,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "lead"
+                    "role": "lead",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "FilterIterator implementation that filters files based on a list of suffixes.",
@@ -4564,8 +4616,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "lead"
+                    "role": "lead",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "Simple template engine.",
@@ -4613,8 +4665,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "lead"
+                    "role": "lead",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "Utility class for timing",
@@ -4744,8 +4796,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "lead"
+                    "role": "lead",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "The PHP Unit Testing framework.",
@@ -5315,8 +5367,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "lead"
+                    "role": "lead",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "Library that helps with managing the version number of Git-hosted PHP projects",
@@ -5415,8 +5467,8 @@
             "authors": [
                 {
                     "name": "Arne Blankerts",
-                    "email": "arne@blankerts.de",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "arne@blankerts.de"
                 }
             ],
             "description": "A small library for converting tokenized PHP source code into XML and potentially other formats",

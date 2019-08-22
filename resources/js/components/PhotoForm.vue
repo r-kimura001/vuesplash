@@ -75,7 +75,7 @@
 
         const formData = new FormData()
         formData.append('photo', this.photo)
-
+        const response = await axios.post('/api/photos', formData)
         this.loading = false
 
         if (response.status === UNPROCESSABLE_ENTITY) {
@@ -99,15 +99,6 @@
         this.$store.commit('auth/setResponse', response)
 
         this.$router.push(`/photos/${response.data.id}`)
-
-        // const response = await axios.post('/api/photos', formData)
-        // const photoId = this.pickUpPhotoId(response.data.url)
-        // this.$router.push(`/photos/${photoId}`)
-        // this.reload();
-        // this.$store.commit('message/setContent', {
-        //   content: '写真が投稿されました！',
-        //   timeout: 6000
-        // })
 
       },
       reload() {
