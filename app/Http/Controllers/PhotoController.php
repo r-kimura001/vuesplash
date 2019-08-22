@@ -100,7 +100,7 @@ class PhotoController extends Controller
     {
         $photo = Photo::where('id', $id)->with('likes')->first();
 
-        if (! $photo) {
+        if (!$photo) {
             abort(404);
         }
 
@@ -119,7 +119,7 @@ class PhotoController extends Controller
     {
         $photo = Photo::where('id', $id)->with('likes')->first();
 
-        if (! $photo) {
+        if (!$photo) {
             abort(404);
         }
 
@@ -136,7 +136,7 @@ class PhotoController extends Controller
     public function download(Photo $photo)
     {
         // 写真の存在チェック
-        if (! Storage::cloud()->exists($photo->filename)) {
+        if (!Storage::cloud()->exists($photo->filename)) {
             abort(404);
         }
 
