@@ -2271,7 +2271,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 15:
                 this.$store.commit('message/setContent', {
                   content: '写真が投稿されました！',
-                  timeout: 6000
+                  timeout: 3000
                 });
                 this.$store.commit('auth/setResponse', response);
                 this.$router.push("/photos/".concat(response.data.id));
@@ -2846,6 +2846,7 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
+//
 //
 //
 //
@@ -5370,37 +5371,8 @@ render._withStripped = true
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "photo-list" },
-    [
-      _c("Pagination", {
-        attrs: { "current-page": _vm.currentPage, "last-page": _vm.lastPage }
-      }),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "grid" },
-        _vm._l(_vm.photos, function(photo) {
-          return _c("Photo", {
-            key: photo.id,
-            staticClass: "grid__item",
-            attrs: { item: photo },
-            on: { like: _vm.onLikeClick }
-          })
-        }),
-        1
-      )
-    ],
-    1
-  )
-}
+var render = function () {}
 var staticRenderFns = []
-render._withStripped = true
 
 
 

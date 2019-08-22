@@ -94,7 +94,7 @@
 
         this.$store.commit('message/setContent', {
           content: '写真が投稿されました！',
-          timeout: 6000
+          timeout: 3000
         })
         this.$store.commit('auth/setResponse', response)
 

@@ -9,6 +9,7 @@
                 :item="photo"
                 @like="onLikeClick"
             />
+            <div v-else>写真の投稿はありません。</div>
         </div>
     </div>
 </template>
