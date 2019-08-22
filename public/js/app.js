@@ -2008,6 +2008,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     currentPage: {
@@ -2269,10 +2271,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 15:
                 this.$store.commit('message/setContent', {
                   content: '写真が投稿されました！',
-                  timeout: 6000
+                  timeout: 1000
                 });
-                this.$router.push("/photos/".concat(response.data.id)); // this.$store.commit('auth/setResponse', response)
-                // const photoId = this.pickUpPhotoId(response.data.url)
+                this.$store.commit('auth/setResponse', response);
+                this.$router.push("/photos/".concat(response.data.id)); // const photoId = this.pickUpPhotoId(response.data.url)
                 // this.$router.push(`/photos/${photoId}`)
                 // this.reload();
                 // this.$store.commit('message/setContent', {
@@ -2280,7 +2282,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 //   timeout: 6000
                 // })
 
-              case 17:
+              case 18:
               case "end":
                 return _context.stop();
             }
@@ -2301,7 +2303,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       });
     },
     pickUpPhotoId: function pickUpPhotoId(url) {
-      //ttps://s3-ap-northeast-1.amazonaws.com/forportfolio/kZVRGm8kdw69.jpeg
       return url.slice(url.lastIndexOf('/'), url.lastIndexOf('.'));
     }
   }
@@ -4572,10 +4573,10 @@ var render = function() {
         ? _c(
             "RouterLink",
             {
-              staticClass: "button",
+              staticClass: "button --pager",
               attrs: { to: "/?page=" + (_vm.currentPage - 1) }
             },
-            [_vm._v("« prev")]
+            [_vm._v("« prev\n    ")]
           )
         : _vm._e(),
       _vm._v(" "),
@@ -4583,10 +4584,10 @@ var render = function() {
         ? _c(
             "RouterLink",
             {
-              staticClass: "button",
+              staticClass: "button --pager",
               attrs: { to: "/?page=" + (_vm.currentPage + 1) }
             },
-            [_vm._v("next »")]
+            [_vm._v("next »\n    ")]
           )
         : _vm._e()
     ],
@@ -5383,6 +5384,10 @@ var render = function() {
     "div",
     { staticClass: "photo-list" },
     [
+      _c("Pagination", {
+        attrs: { "current-page": _vm.currentPage, "last-page": _vm.lastPage }
+      }),
+      _vm._v(" "),
       _c(
         "div",
         { staticClass: "grid" },
@@ -5395,11 +5400,7 @@ var render = function() {
           })
         }),
         1
-      ),
-      _vm._v(" "),
-      _c("Pagination", {
-        attrs: { "current-page": _vm.currentPage, "last-page": _vm.lastPage }
-      })
+      )
     ],
     1
   )

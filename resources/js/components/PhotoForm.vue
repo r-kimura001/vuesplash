@@ -95,11 +95,12 @@
 
         this.$store.commit('message/setContent', {
           content: '写真が投稿されました！',
-          timeout: 6000
+          timeout: 1000
         })
+        this.$store.commit('auth/setResponse', response)
+
         this.$router.push(`/photos/${response.data.id}`)
 
-        // this.$store.commit('auth/setResponse', response)
         // const photoId = this.pickUpPhotoId(response.data.url)
         // this.$router.push(`/photos/${photoId}`)
         // this.reload();
@@ -113,7 +114,6 @@
         this.$router.go({path: this.$router.currentRoute.path, force: true});
       },
       pickUpPhotoId(url) {
-        //ttps://s3-ap-northeast-1.amazonaws.com/forportfolio/kZVRGm8kdw69.jpeg
         return url.slice(url.lastIndexOf('/'), url.lastIndexOf('.'))
       },
 

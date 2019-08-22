@@ -96,22 +96,6 @@ img {
   visibility: visible;
 }
 
-.photo:nth-child(4n+1) .photo__wrapper {
-  background: #DBBCD5;
-}
-
-.photo:nth-child(4n+2) .photo__wrapper {
-  background: #DBDBBC;
-}
-
-.photo:nth-child(4n+3) .photo__wrapper {
-  background: #BCDBC8;
-}
-
-.photo:nth-child(4n) .photo__wrapper {
-  background: #BCC8DB;
-}
-
 .photo__wrapper {
   overflow: hidden;
   padding-top: 75%;
@@ -285,6 +269,10 @@ img {
 .button:hover {
   border-color: #333;
   color: inherit;
+}
+
+.button.\--pager {
+  margin-bottom: 10px;
 }
 
 .button .icon {
