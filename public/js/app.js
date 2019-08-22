@@ -2233,7 +2233,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       var _submit = _asyncToGenerator(
       /*#__PURE__*/
       _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-        var formData, response;
+        var formData;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
@@ -2241,40 +2241,36 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 this.loading = true;
                 formData = new FormData();
                 formData.append('photo', this.photo);
-                _context.next = 5;
-                return axios.post('/api/photos', formData);
-
-              case 5:
-                response = _context.sent;
                 this.loading = false;
 
                 if (!(response.status === _util__WEBPACK_IMPORTED_MODULE_1__["UNPROCESSABLE_ENTITY"])) {
-                  _context.next = 10;
+                  _context.next = 7;
                   break;
                 }
 
                 this.errors = response.data.errors;
                 return _context.abrupt("return", false);
 
-              case 10:
+              case 7:
                 this.reset();
                 this.$emit('input', false);
 
                 if (!(response.status !== _util__WEBPACK_IMPORTED_MODULE_1__["CREATED"])) {
-                  _context.next = 15;
+                  _context.next = 12;
                   break;
                 }
 
                 this.$store.commit('error/setCode', response.status);
                 return _context.abrupt("return", false);
 
-              case 15:
+              case 12:
                 this.$store.commit('message/setContent', {
                   content: '写真が投稿されました！',
-                  timeout: 1000
+                  timeout: 6000
                 });
                 this.$store.commit('auth/setResponse', response);
-                this.$router.push("/photos/".concat(response.data.id)); // const photoId = this.pickUpPhotoId(response.data.url)
+                this.$router.push("/photos/".concat(response.data.id)); // const response = await axios.post('/api/photos', formData)
+                // const photoId = this.pickUpPhotoId(response.data.url)
                 // this.$router.push(`/photos/${photoId}`)
                 // this.reload();
                 // this.$store.commit('message/setContent', {
@@ -2282,7 +2278,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 //   timeout: 6000
                 // })
 
-              case 18:
+              case 15:
               case "end":
                 return _context.stop();
             }
