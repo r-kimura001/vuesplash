@@ -1,7 +1,7 @@
 <template>
     <div class="photo-list">
         <Pagination :current-page="currentPage" :last-page="lastPage"/>
-        <div class="grid">
+        <div class="grid" v-if="photos">
             <Photo
                 class="grid__item"
                 v-for="photo in photos"
@@ -9,8 +9,8 @@
                 :item="photo"
                 @like="onLikeClick"
             />
-            <div v-else>写真の投稿はありません。</div>
         </div>
+        <div v-else>写真の投稿はありません。</div>
     </div>
 </template>
 

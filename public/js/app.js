@@ -5371,8 +5371,39 @@ render._withStripped = true
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function () {}
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "photo-list" },
+    [
+      _c("Pagination", {
+        attrs: { "current-page": _vm.currentPage, "last-page": _vm.lastPage }
+      }),
+      _vm._v(" "),
+      _vm.photos
+        ? _c(
+            "div",
+            { staticClass: "grid" },
+            _vm._l(_vm.photos, function(photo) {
+              return _c("Photo", {
+                key: photo.id,
+                staticClass: "grid__item",
+                attrs: { item: photo },
+                on: { like: _vm.onLikeClick }
+              })
+            }),
+            1
+          )
+        : _c("div", [_vm._v("写真の投稿はありません。")])
+    ],
+    1
+  )
+}
 var staticRenderFns = []
+render._withStripped = true
 
 
 
@@ -22852,8 +22883,8 @@ var INTERNAL_SERVER_ERROR = 500;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/kimura/code/vuesplash/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/kimura/code/vuesplash/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/user1/code/myapp/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/user1/code/myapp/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
